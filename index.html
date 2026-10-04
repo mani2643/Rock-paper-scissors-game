@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock paper scissors game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Russo+One&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Russo+One&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <main class="game-container">
+        <header>
+            <h1>Rock Paper Scissors</h1>
+            <p>First to 5 wins <span id="special">!</span></p>
+        </header>
+        <section class="score-board">
+            <div class="score-box">
+                <span class="score-label">YOU</span>
+                <span id="user-score">0</span>
+            </div>
+            <div class="score-box">:</div>
+            <div class="score-box">
+                <span class="score-label">COMPUTER</span>
+                <span id="computer-score">0</span>
+            </div>
+        </section>
+        <section class="choices">
+            <button class="choice-btn">
+                <span class="choice-icon">✊</span>
+                <span class="choice-name">Rock</span>
+            </button>
+            <button class="choice-btn">
+                <span class="choice-icon">✋</span>
+                <span class="choice-name">Paper</span>
+            </button>
+            <button class="choice-btn">
+                <span class="choice-icon">✌️</span>
+                <span class="choice-name">Scissors</span>
+            </button>
+        </section>
+        <section class="battle-area">
+            <div class="player-choice">
+                <p>You</p>
+                <div id="user-choice" class="selected-choice">?</div>
+            </div>
+            <div class="vs">vs</div>
+            <div class="player-choice">
+                <p>Computer</p>
+                <div id="computer-choice" class="selected-choice">?</div>
+            </div>
+        </section>
+        <section class="result-section">
+            <h2 id="result-text">Make your move!</h2>
+            <p id="result-description">Choose Rock, Paper or Scissors to start the game</p>
+        </section>
+        <section class="round-info">
+            <span>Round </span><span id="round-number">0</span><span> / 5</span>
+        </section>
+        <button id="reset-btn">Reset Game</button>
+    </main>
+</body>
+</html>

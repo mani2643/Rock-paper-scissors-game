@@ -1,0 +1,219 @@
+:root {
+    --bg: #0d0d0d;
+    --surface: #161616;
+    --card: #242424;
+    --card-hover: #2e2e2e;
+    --accent: #f9e03f;
+    --accent-hover: #e8cf2f;
+    --text-primary: #f2f2f2;
+    --text-secondary: #b1b1b1;
+    --border: #3a3a3a;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+html{
+    font-size:14pt;
+    font-family:Poppins,sans-serif;
+    color:var(--text-primary);
+}
+body{
+    min-height:100vh;
+    min-height:100dvh;
+    background-color:var(--bg);
+    padding:1rem;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.game-container{
+    background-color:var(--surface);
+    padding:1rem;
+    width:min(600px,100%);
+    border:1px solid var(--border);
+    border-radius:20px;
+    text-align:center;
+}
+.game-container h1{
+    font-size:2.2rem;
+    margin-bottom:8px;
+    font-family:'Russo One',Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif,sans-serif;
+}
+.game-container #special{
+    color:var(--accent);
+    text-shadow:0px 5px 15px var(--accent);
+}
+.game-container p{
+    color:var(--text-secondary);
+}
+.score-board{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:30px 0;
+}
+.score-box{
+    width:90px;
+    height:90px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:5px;
+}
+.score-label{
+    font-size:0.75rem;
+    color:var(--text-secondary);
+    letter-spacing:2px;
+}
+#user-score,#computer-score{
+    font-size:2rem;
+    font-weight:600;
+    color:var(--accent);
+}
+.score-box:nth-child(2){
+    color:var(--card-hover);
+    font-size:2rem;
+}
+/* choices-section */
+.choices{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:1.5rem;
+    margin:30px 0;
+}
+.choice-btn{
+    height:140px;
+    width:130px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font:inherit;
+    gap:1rem;
+    background:var(--card);
+    border:2px solid var(--border);
+    color:var(--text-primary);
+    border-radius:15px;
+    cursor:pointer;
+    transition:200ms ease;
+}
+.choice-icon{
+    font-size:3rem;
+}
+.choice-btn:hover{
+    background-color:var(--card-hover);
+    transform:translateY(-6px);
+    border-color:var(--accent);
+}
+.choice-btn:active{
+    transform:scale(0.95);
+}
+.choice-name{
+    font-size:0.9rem;
+    color:var(--text-secondary);
+}
+.battle-area{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:2rem;
+    margin:2rem 0;
+}
+.player-choice p{
+    margin-bottom:10px;
+    color:var(--text-secondary);
+}
+.selected-choice{
+    width:90px;
+    height:90px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background-color:var(--card);
+    border:1px solid var(--border);
+    border-radius:50%;
+    font-size:2rem;
+}
+.vs{
+    color:var(--accent);
+    font-weight:bold;
+    font-size:1.2rem;
+    margin-top:1.2rem;
+}
+.result-section{
+    min-height:80px;
+    margin:20px 0;
+}
+.result-section h2{
+    margin-top:8px;
+}
+.result-section p{
+    color:var(--text-secondary);
+}
+/* Round */
+.round-info{
+    margin:20px 0;
+    color:var(--text-secondary);
+}
+#round-number{
+    color:var(--accent);
+    font-weight:bold;
+}
+#reset-btn{
+    border:none;
+    background-color:var(--accent);
+    color:var(--bg);
+    font:inherit;
+    font-weight:600;
+    font-size:0.9rem;
+    padding:.5rem .75rem;
+    border-radius:.5rem;
+    cursor:pointer;
+    transition:200ms ease;
+}
+#reset-btn:hover{
+    transform:translateY(-4px);
+    background-color:var(--accent-hover);
+    box-shadow:0px 1px 5px #e8cf2f90;
+}
+#reset-btn:active{
+    transform:scale(0.95);
+}
+
+/* Responsiveness */
+
+@media(max-width:600px){
+    html{
+        font-size:12pt;
+    }
+    body{
+        padding:0.8rem;
+    }
+    .game-container{
+        padding:.8rem;
+    }
+    .game-container h1{
+        font-size:1.7rem;
+    }
+    .choices{
+        gap:0.9rem;
+    }
+    .choice-btn{
+        height:110px;
+        width:100px;
+    }
+    .choice-icon{
+        font-size:2.5rem;
+    }
+    .selected-choice{
+        height:80px;
+        width:80px;
+    }
+    .battle-area{
+        gap:1rem;
+    }
+}
