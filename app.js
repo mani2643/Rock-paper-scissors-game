@@ -5,14 +5,19 @@ const resultDescription = document.querySelector('.result-section #result-descri
 const userScoreElement = document.querySelector('#user-score');
 const computerScoreElement = document.querySelector('#computer-score');
 const resetbtn = document.querySelector('#reset-btn');
+const roundNumberElement = document.querySelector('#round-number');
 
 let userChoice;
 let computerChoice;
 let userScore = 0;
 let computerScore = 0;
+let roundNumber = 0;
 
 choice_btn.forEach((btn)=>{
     btn.addEventListener('click',()=>{
+        if(roundNumber===5){
+            return;
+        }
         userChoice = btn.firstElementChild.innerText;
         userChoiceElement.innerText = userChoice;
         computerChoice = getComputerChoice();
@@ -35,7 +40,8 @@ function getComputerChoice(){
         computerChoice = '✌️';
     }
     computerChoiceElement.innerText = computerChoice;
-
+    roundNumber++;
+    roundNumberElement.innerText = roundNumber;
     return computerChoice;
 }
 
@@ -51,6 +57,17 @@ function checkWinner(userChoice,computerChoice){
         computerScore++;
         computerScoreElement.innerText = computerScore;
     }
+    if(roundNumber === 5){
+        if(userScore > computerScore){
+            resultDescription.innerText = "You won the match! 🏆";
+        }else if(computerScore > userScore){
+            resultDescription.innerText = "Computer won the match! 🤖";
+        }else{
+            resultDescription.innerText = "Match tied! 🤝";
+        }
+
+        return;
+    }
 }
 
 function resetGame(){
@@ -58,6 +75,8 @@ function resetGame(){
     computerScore = 0;
     userScoreElement.innerText = userScore;
     computerScoreElement.innerText = computerScore;
+    roundNumber = 0;
+    roundNumberElement.innerText = roundNumber;
     resultDescription.innerText = 'Choose Rock, Paper or Scissors to start the game';
     userChoiceElement.innerText = '?';
     computerChoiceElement.innerText = '?';
