@@ -56,6 +56,8 @@ function checkWinner(userChoice,computerChoice){
 function resetGame(){
     userScore = 0;
     computerScore = 0;
+    userScoreElement.innerText = userScore;
+    computerScoreElement.innerText = computerScore;
     resultDescription.innerText = 'Choose Rock, Paper or Scissors to start the game';
     userChoiceElement.innerText = '?';
     computerChoiceElement.innerText = '?';
